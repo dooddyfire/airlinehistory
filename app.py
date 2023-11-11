@@ -38,10 +38,10 @@ driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), opti
 #wd.get(input("Enter your bigc url : "))
 
 
-url = "https://airlinehistory.co.uk/location/thailand/"
+url = "https://airlinehistory.co.uk/location/albania/"
 driver.get(url)
 
-filename = "thailandx.xlsx"
+filename = "albania.xlsx"
 
 
 soup = BeautifulSoup(driver.page_source,'html.parser')
@@ -76,7 +76,7 @@ for i in url_lis:
         driver.get(i)
         
         try:
-                note = driver.find_element(By.CSS_SELECTOR,'.extra-info').text 
+                note = driver.find_element(By.XPATH,'//*[@id="ah-single-airline-wrapper"]/div[1]/div[5]/p').text 
                 print(note)
                 note_lis.append(note)
         except: 
