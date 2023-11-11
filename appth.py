@@ -33,16 +33,21 @@ options.add_experimental_option("useAutomationExtension", False)
 
 options.add_argument('--ignore-certificate-errors')
 
+
+url = input("Enter your url : ")
+
+filename = input("Enter filename : ")
+filename = filename +".xlsx"
+
 # open it, go to a website, and get results
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 #wd.get(input("Enter your bigc url : "))
 
 
-url = input("Enter your url : ")
+
 driver.get(url)
 
-filename = input("Enter filename : ")
-filename = filename +".xlsx"
+
 
 
 soup = BeautifulSoup(driver.page_source,'html.parser')
