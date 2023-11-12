@@ -150,7 +150,7 @@ def fetch_data(filex):
                         print(update)
                         update_lis.append(update)
                 except: 
-                        update_lis.append(update)
+                        update_lis.append(" ")
 
         df = pd.DataFrame()
         df['Title'] = title_lis 
